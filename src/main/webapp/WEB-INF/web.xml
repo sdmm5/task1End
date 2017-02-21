@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.3" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_3.xsd">
+
+	<servlet>
+		<servlet-name>ActionServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:applicationContext.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		<!--启动优先级0或大于0表示应用启动就加载 当是一个负数或者没有指定时则指示容器在该servlet被选择时被加载,正数越小,表示启动servlet的优先级越高 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ActionServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>runtain</servlet-name>
+		<jsp-file>/WEB-INF/addEmp.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>runtain</servlet-name>
+		<url-pattern>/addEmp.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>runtain1</servlet-name>
+		<jsp-file>/WEB-INF/loadEmp.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>runtain1</servlet-name>
+		<url-pattern>/loadEmp.jsp</url-pattern>
+	</servlet-mapping>
+
+
+
+</web-app>
